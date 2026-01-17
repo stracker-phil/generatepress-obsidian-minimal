@@ -1,0 +1,98 @@
+/**
+ * Tab Bar - Obsidian-style header navigation
+ *
+ * Basic layout structure. Detailed styling to be customized.
+ */
+
+body {
+	--tab-width: 200px;
+
+	--tab-font-size: var(--ui-font-size);
+	--tab-line-height: calc(var(--header-height) - 14px);
+	--tab-text-color: var(--tx2);
+	--tab-text-color-active: var(--tx1);
+}
+
+body.sidebar-position-left {
+	--tabbar-padding-left: 40px;
+}
+
+html.has-obsidian-sidebar body.sidebar-position-left {
+	--tabbar-padding-left: 0;
+}
+
+.tab-header-container {
+	display: flex;
+	width: 100%;
+	background: var(--background-primary-alt);
+	border-bottom: 1px solid var(--separator-color);
+	padding: 0 0 0 var(--tabbar-padding-left);
+	height: var(--header-height);
+	font-size: var(--tab-font-size);
+	line-height: var(--tab-line-height);
+
+	transition: padding var(--animation-speed) var(--animation-type);
+	overflow: hidden;
+	overflow-x: auto;
+}
+
+.tab-header-container-inner {
+	display: flex;
+	margin: 6px -5px 0;
+	padding: 1px 15px 0;
+
+	.tab-header-spacer {
+		flex: 1 1 0;
+	}
+
+	.tab-item {
+		position: relative;
+		display: flex;
+		padding: 0 3px 0 6px;
+		flex: 1 1 0;
+		width: var(--tab-width);
+
+		&:after {
+			position: absolute;
+			inset-inline-end: -0.5px;
+			width: 1px;
+			background-color: var(--separator-color);
+			content: '';
+			height: 20px;
+		}
+
+		&:hover, &:active {
+			--tab-text-color: var(--tab-text-color-active);
+			border-bottom: 2px solid var(--ui-color);
+		}
+
+		&.is-active-tab {
+			--tab-text-color: var(--tab-text-color-active);
+			border-bottom: 2px solid var(--color-accent);
+			cursor: default;
+		}
+	}
+
+	.tab-item-link {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 100%;
+		padding: 0 2px;
+
+		color: var(--tab-text-color);
+		text-decoration: none;
+
+		&:hover, &:active, &:visited, &:focus {
+			color: var(--tab-text-color);
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	body.sidebar-position-left,
+	html.has-obsidian-sidebar body.sidebar-position-left {
+		--tabbar-padding-left: 40px;
+	}
+}

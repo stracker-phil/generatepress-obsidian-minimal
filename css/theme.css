@@ -1,0 +1,238 @@
+/**
+ == THEME ==
+ */
+:root {
+	color-scheme: light dark;
+
+	--color-red: #e65050;
+	--color-orange: #fa8d3e;
+	--color-yellow: #f2ae49;
+	--color-green: #6CBF43;
+	--color-cyan: #4cbf99;
+	--color-blue: #399ee6;
+	--color-purple: #a37acc;
+	--color-pink: #ff7383;
+
+	--bg1: #fff;
+	--bg2: #f8f9fa;
+	--bg3: #d1dae080;
+	--tx1: #5C6165;
+	--tx2: #8A9199;
+
+	--color-accent: #ff9900;
+	--color-accent-alt: #D68100;
+	--bold-color: #8836EF;
+	--italic-color: #40A02B;
+	--ui-color: #d5dbe1;
+	--separator-color: #E6EAED;
+
+	--logo-filter: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-red: #ff6666;
+		--color-orange: #ffad66;
+		--color-yellow: #ffd137;
+		--color-green: #87D96C;
+		--color-cyan: #95e6cb;
+		--color-blue: #73d0ff;
+		--color-purple: #dfbfff;
+		--color-pink: #f27983;
+
+		--bg1: #232937;
+		--bg2: #1E2431;
+		--bg3: #333d5080;
+		--tx1: #cccac2;
+		--tx2: #707A8C;
+
+		--color-accent: #ffaa33;
+		--color-accent-alt: #ffbb5c;
+		--bold-color: #CBA6F7;
+		--italic-color: #A6E3A1;
+		--ui-color: #333c4a;
+		--separator-color: #333C4A;
+
+		--logo-filter: invert(1);
+	}
+}
+
+body {
+	--base-text-size: 18px;
+	--line-height: 1.75em;
+	--line-width: 40rem;
+	--max-width: 88%;
+	--list-spacing: 0.075em;
+
+	--h1-size: 1.7578125em;
+	--h1-weight: 600;
+	--h2-size: 1.40625em;
+	--h2-weight: 400;
+	--h3-size: 1.125em;
+	--h3-weight: 500;
+	--h4-size: 1em;
+	--h4-weight: 500;
+	--h5-size: 0.9em;
+	--h5-weight: 500;
+	--h6-size: 0.85em;
+	--h6-weight: 400;
+	--p-spacing: 0.85rem;
+	--animation-speed: 0s;
+	--animation-type: linear;
+
+	--header-height: 40px;
+	--ui-font-size: 15px;
+	--ui-line-height: 1.3em;
+
+	--img-radius: 4px;
+	--img-opacity: 0.7;
+
+	--h1-color: var(--color-red);
+	--h2-color: var(--color-orange);
+	--h3-color: var(--color-yellow);
+	--h4-color: var(--color-green);
+	--h5-color: var(--color-blue);
+	--h6-color: var(--color-purple);
+	--background-primary: var(--bg1);
+	--background-primary-alt: var(--bg2);
+	--text-normal: var(--tx1);
+	--text-muted: var(--tx2);
+	--link-color: var(--color-accent);
+	--link-hover-color: var(--color-accent-alt);
+
+	&.obsidian-animations {
+		--animation-speed: 0.3s;
+		--animation-type: ease-in-out;
+	}
+}
+
+/**
+ == STYLING - TYPOGRAPHY ==
+*/
+
+body {
+	font-size: var(--base-text-size);
+	line-height: var(--line-height);
+	background: var(--background-primary);
+	color: var(--text-normal);
+
+	h1 {
+		font-size: var(--h1-size);
+		font-weight: var(--h1-weight);
+		color: var(--h1-color);
+	}
+
+	h2 {
+		font-size: var(--h2-size);
+		font-weight: var(--h2-weight);
+		color: var(--h2-color);
+		margin-top: 1.75em;
+	}
+
+	h3 {
+		font-size: var(--h3-size);
+		font-weight: var(--h3-weight);
+		color: var(--h3-color);
+		margin-top: 1.75em;
+	}
+
+	h4 {
+		font-size: var(--h4-size);
+		font-weight: var(--h4-weight);
+		color: var(--h4-color);
+		margin-top: 1.75em;
+	}
+
+	h5 {
+		font-size: var(--h5-size);
+		font-weight: var(--h5-weight);
+		color: var(--h5-color);
+		text-transform: uppercase;
+		margin-top: 1.75em;
+	}
+
+	h6 {
+		font-size: var(--h6-size);
+		font-weight: var(--h6-weight);
+		color: var(--h6-color);
+		text-transform: uppercase;
+		margin-top: 1.75em;
+	}
+
+	strong {
+		color: var(--bold-color);
+	}
+
+	em {
+		color: var(--italic-color);
+	}
+
+	a, a:visited {
+		color: var(--link-color);
+	}
+
+	a:hover, a:active {
+		color: var(--link-hover-color);
+	}
+
+	.entry-content {
+		ol > li,
+		ul > li {
+			padding-top: var(--list-spacing);
+			padding-bottom: var(--list-spacing);
+		}
+
+		p {
+			margin-block-start: var(--p-spacing);
+			margin-block-end: var(--p-spacing);
+		}
+
+		hr,
+		> .wp-block-separator:not(:last-child):not(.wp-block-heading) {
+			border-top-width: 1px;
+			border-top-color: var(--separator-color);
+			margin-block-start: 2em;
+			margin-block-end: 2em;
+		}
+
+		figure {
+			margin: var(--line-height) 0;
+
+			img {
+				border-radius: var(--img-radius);
+
+				opacity: var(--img-opacity);
+				transition-property: opacity;
+				transition: opacity .25s linear;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+/**
+ == STYLING - LAYOUT ==
+*/
+
+.site-header .header-image {
+	filter: var(--logo-filter);
+}
+
+.entry-header,
+.entry-content {
+	width: var(--line-width);
+	max-width: var(--max-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ BLOCK EDITOR
+*/
+body.editor-styles-wrapper .wp-block {
+	width: var(--line-width);
+	max-width: var(--max-width);
+}

@@ -1,0 +1,22 @@
+/*
+ Theme Name:   Obsidian Minimal Theme
+ Theme URI:    https://philippstracker.com/obsidian-minimal-theme/
+ Description:  Child theme that makes a GeneratePress site look like an Obsidian Vault using the "Minimal" theme.
+ Author:       Philipp Stracker
+ Author URI:   https://philippstracker.com/
+ Template:     generatepress
+ Version:      1.0
+ Text Domain:  gp-obsidian-minimal
+*/
+
+.footer-segment.footer-notice {
+	margin: var(--p-spacing) 0;
+	color: var(--text-muted);
+
+	a, a:visited {
+		color: inherit;
+	}
+	a:hover, a:active {
+		color: var(--link-hover-color);
+	}
+}
