@@ -229,12 +229,22 @@ body {
 	margin-right: auto;
 }
 
+/* Blog post TLDR intros */
+.post .intro {
+	font-size: 1.25em;
+	line-height: 1.55;
+	font-weight: 300;
+	padding-bottom: calc(3.5 * var(--p-spacing));
+	margin-bottom: calc(3.5 * var(--p-spacing));
+	border-bottom: 1px solid var(--separator-color);
+}
+
 /* Cornell-Note cues */
 .site {
 	--cue-width: 300px;
 	--cue-pull: calc(-1 * var(--cue-width));
 	--cue-font-size: calc(0.75 * var(--base-text-size));
-	--cue-padding: 16px;
+	--cue-padding: 0 16px;
 	--cue-text-align: right;
 	--cue-float: left;
 
@@ -247,7 +257,7 @@ body {
 	figure.wp-block-pullquote {
 		background: transparent !important;
 		padding: var(--cue-padding);
-		margin: 0 0 0 var(--cue-pull) !important;
+		margin: 0 0 0 var(--cue-pull);
 		border: 0;
 		box-shadow: none;
 		float: var(--cue-float);
@@ -281,6 +291,7 @@ body {
 
 	.site .entry-content figure.wp-block-pullquote {
 		--cue-width: 100%;
+		--cue-padding: 16px;
 		--cue-pull: 0;
 		--cue-float: none;
 		--cue-text-align: left;
