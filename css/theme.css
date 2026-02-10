@@ -274,8 +274,8 @@ body {
 	border-bottom: 1px solid var(--separator-color);
 }
 
-/* Cornell-Note cues */
-.site {
+/* Cornell-Note cues, only on single posts */
+.single-post .site {
 	--cue-width: 300px;
 	--cue-pull: calc(-1 * var(--cue-width));
 	--cue-font-size: calc(0.75 * var(--base-text-size));
