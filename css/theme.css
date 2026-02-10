@@ -229,6 +229,41 @@ body {
 	margin-right: auto;
 }
 
+/* Blog post props */
+.post .entry-meta {
+	--metadata-bottom-space: calc(3 * var(--p-spacing));
+	--metadata-label-padding: 4px 8px 4px 0;
+	--metadata-value-padding: 4px 8px;
+	--metadata-label-width: 134px;
+	--metadata-label-color: var(--text-muted);
+	--metadata-value-color: var(--text-normal);
+
+	margin: 0 0 var(--metadata-bottom-space) 0;
+
+	.entry-meta-row {
+		display: flex;
+		flex-direction: row;
+
+		.entry-meta-label,
+		.entry-meta-value {
+			display: flex;
+			align-items: flex-start;
+		}
+
+		.entry-meta-label {
+			width: var(--metadata-label-width);
+			min-width: var(--metadata-label-width);
+			padding: var(--metadata-label-padding);
+			color: var(--metadata-label-color);
+		}
+
+		.entry-meta-value {
+			padding: var(--metadata-value-padding);
+			color: var(--metadata-value-color);
+		}
+	}
+}
+
 /* Blog post TLDR intros */
 .post .intro {
 	font-size: 1.25em;
