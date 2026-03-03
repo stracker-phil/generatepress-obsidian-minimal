@@ -275,6 +275,16 @@ body {
 	border-bottom: 1px solid var(--separator-color);
 }
 
+.post .simpletoc {
+	padding-bottom: calc(3.5 * var(--p-spacing));
+	margin-bottom: calc(3.5 * var(--p-spacing));
+	border-bottom: 1px solid var(--separator-color);
+
+	.simpletoc-list {
+		margin-bottom: 0;
+	}
+}
+
 /* Cornell-Note cues, only on single posts */
 .single-post .site {
 	--cue-width: 300px;
