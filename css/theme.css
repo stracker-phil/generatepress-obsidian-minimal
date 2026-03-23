@@ -301,11 +301,12 @@ body {
 		--cue-padding: 0 16px;
 		--cue-text-align: right;
 		--cue-float: left;
+		--margin-for-cue: var(--cue-width);
 
 		container-type: inline-size;
 
 		.entry-header, .entry-content, .entry-summary {
-			margin-left: var(--cue-width);
+			margin-left: var(--margin-for-cue);
 		}
 
 		figure.wp-block-pullquote {
@@ -339,7 +340,7 @@ body {
 	}
 
 	@container (max-width: 1079px) {
-		.site {
+		.single-post .site {
 			.entry-header, .entry-content, .entry-summary {
 				margin-left: auto;
 			}
